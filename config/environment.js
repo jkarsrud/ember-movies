@@ -16,6 +16,19 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    TMDB: {
+      api_key: 'c4fdf793b009c1fa0367b13e7872b091',
+      api_host: 'https://api.themoviedb.org/3/'
+    },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://api.themoviedb.org/3/",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
     }
   };
 

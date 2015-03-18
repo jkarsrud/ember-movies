@@ -1,0 +1,7 @@
+<h1>Popular movies</h1>
+<ul>
+  {{#each model as |movie|}}
+    <li><h2>{{movie.title}} - <small>{{movie.release_date}}</small></h2></li>
+  {{/each}}
+</ul>
+{{outlet}}
