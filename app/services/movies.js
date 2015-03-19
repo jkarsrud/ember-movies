@@ -5,17 +5,6 @@ export default Ember.Service.extend({
   apiKey: config.TMDB.api_key,
   apiHost: config.TMDB.api_host,
   apiNamespace: config.TMDB.api_namespace,
-  getMovies(query) {
-    return new Ember.RSVP.Promise((resolve, reject) => {
-      Ember.$.ajax({
-        url: this.buildURL('discover/movie', query)
-      }).success(result => {
-        resolve(result.results);
-      }).error(error => {
-        reject(error);
-      });
-    });
-  },
   getConfiguration() {
     return new Ember.RSVP.Promise((resolve, reject) => {
       this._configurationRequest().then(config => {
