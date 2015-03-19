@@ -1,0 +1,17 @@
+.movie-item {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 1px;
+  &:hover {
+    box-shadow: 0 0 0 2px $brand-primary;
+  }
+  img {
+    width: 100%;
+  }
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

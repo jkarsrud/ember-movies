@@ -23,11 +23,11 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
-      'font-src': "'self'",
-      'connect-src': "'self' https://api.themoviedb.org/3/",
-      'img-src': "'self'",
-      'style-src': "'self'",
+      'script-src': "'self' http://ember.dev:35729",
+      'font-src': "'self' http://fonts.googleapis.com/ http://fonts.gstatic.com",
+      'connect-src': "'self' ws://ember.dev:35729 https://api.themoviedb.org/3/",
+      'img-src': "'self' http://image.tmdb.org/ https://image.tmdb.org/",
+      'style-src': "'self' http://fonts.googleapis.com/",
       'media-src': "'self'"
     }
   };

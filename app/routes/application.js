@@ -6,11 +6,5 @@ export default Ember.Route.extend({
     return Ember.RSVP.all([
       this.get('movies').getConfiguration()
     ]);
-  },
-  model() {
-    return this.get('movies').getMovies({
-      sort_by: 'popularity.desc',
-      year: '2015'
-    });
   }
 });
