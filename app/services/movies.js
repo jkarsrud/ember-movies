@@ -4,6 +4,7 @@ import config from '../config/environment';
 export default Ember.Service.extend({
   apiKey: config.TMDB.api_key,
   apiHost: config.TMDB.api_host,
+  apiNamespace: config.TMDB.api_namespace,
   getMovies(query) {
     return new Ember.RSVP.Promise((resolve, reject) => {
       Ember.$.ajax({
@@ -37,7 +38,12 @@ export default Ember.Service.extend({
     });
   },
   buildURL(url, options) {
-    return this.get('apiHost') + url + this.buildQueryParams(options);
+    const urlBuilder = [
+      this.get('apiHost'),
+      this.get('apiNamespace'),
+      url
+    ];
+    return urlBuilder.join('/') + this.buildQueryParams(options);
   },
   buildQueryParams(options) {
     options = options || {};

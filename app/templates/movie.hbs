@@ -1,1 +1,21 @@
-{{outlet}}
+<div class="movie">
+  <h2>{{model.title}}</h2>
+  <div class="row movie-info">
+    <div class="col-sm-4 col-md-4">
+      {{movie-cover movie=model size="large"}}
+    </div>
+    <div class="col-sm-8 col-md-8">
+      <h4>{{model.tagline}}</h4>
+      <p>{{model.overview}}</p>
+      <h5>Interesting facts</h5>
+      <ul class="list-group">
+        <li class="list-group-item">Rating: {{model.vote_average}}</li>
+        <li class="list-group-item">Budget: $ {{model.budget}}</li>
+        <li class="list-group-item">Revenue: $ {{model.revenue}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="movie-backdrop-container">
+    {{movie-backdrop movie=model}}
+  </div>
+</div>

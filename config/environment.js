@@ -19,15 +19,16 @@ module.exports = function(environment) {
     },
     TMDB: {
       api_key: 'c4fdf793b009c1fa0367b13e7872b091',
-      api_host: 'https://api.themoviedb.org/3/'
+      api_host: 'https://api.themoviedb.org',
+      api_namespace: '3'
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' http://ember.dev:35729",
       'font-src': "'self' http://fonts.googleapis.com/ http://fonts.gstatic.com",
-      'connect-src': "'self' ws://ember.dev:35729 https://api.themoviedb.org/3/",
+      'connect-src': "'self' ws://ember.dev:35729 http://api.themoviedb.org/ https://api.themoviedb.org/",
       'img-src': "'self' http://image.tmdb.org/ https://image.tmdb.org/",
-      'style-src': "'self' http://fonts.googleapis.com/",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com/",
       'media-src': "'self'"
     }
   };

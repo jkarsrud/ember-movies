@@ -4,14 +4,17 @@ export default Ember.Component.extend({
   movieService: Ember.inject.service('movies'),
   tagName: 'img',
   attributeBindings: ['imageUrl:src', 'alt'],
+  classNames: ['movie-cover'],
+  waitForImageLoad: function() {
+    this.$().on('load', () => {
+      this.$().addClass('loaded');
+    });
+  }.on('didInsertElement'),
   alt: function() {
     return this.get('movie.title');
   }.property('movie.title'),
   imageUrl: function() {
     const movieService = this.get('movieService');
-
-    console.log(this.get('movie'));
-
     const baseUrl = movieService.get('images.secure_base_url');
     const posterSizes = movieService.get('images.poster_sizes');
     const posterUrl = this.get('movie.poster_path');
@@ -23,6 +26,9 @@ export default Ember.Component.extend({
         break;
       case 'medium':
         posterIndex = 2;
+        break;
+      case 'large':
+        posterIndex = 3;
         break;
       default:
         posterIndex = 1;
