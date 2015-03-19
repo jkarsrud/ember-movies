@@ -3,7 +3,20 @@
   max-width: 100%;
   opacity: 0;
   transition: opacity .5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   &.loaded {
     opacity: 1;
   }
+}
+
+.movie-cover-wrapper {
+  height: 0;
+  padding-bottom: 150%;
+  position: relative;
+  display: block;
+  background: $gray-dark;
 }

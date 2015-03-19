@@ -1,7 +1,12 @@
-<h1>Popular movies</h1>
-<div class="row">
-{{#each model as |movie|}}
+<h3>Popular movies</h3>
+<div class="row movie-list">
+{{#each model.discover as |movie|}}
   {{movie-item movie=movie}}
 {{/each}}
 </div>
-{{outlet}}
+<h3>Upcoming movies</h3>
+<div class="row movie-list">
+  {{#each model.upcoming as |movie|}}
+    {{movie-item movie=movie}}
+  {{/each}}
+</div>

@@ -2,7 +2,9 @@
   <h2>{{model.title}}</h2>
   <div class="row movie-info">
     <div class="col-sm-4 col-md-4">
-      {{movie-cover movie=model size="large"}}
+      <div class="movie-cover-wrapper">
+        {{movie-cover movie=model size="large"}}
+      </div>
     </div>
     <div class="col-sm-8 col-md-8">
       <h4>{{model.tagline}}</h4>
