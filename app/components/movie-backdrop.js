@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  movieService: Ember.inject.service('movies'),
   attributeBindings: ['style'],
-  classNames: ['movie-backdrop'],
+  classNameBindings: [':movie-backdrop', 'loaded'],
+  loaded: false,
   waitForImageLoad: function() {
     const img = Ember.$('<img />', {
       src: this.get('imageUrl'),
@@ -11,7 +11,8 @@ export default Ember.Component.extend({
     });
 
     img.on('load', () => {
-      this.$().remove('img').addClass('loaded');
+      this.$().remove('img');
+      this.set('loaded', true);
     });
   }.on('didInsertElement'),
   style: function() {

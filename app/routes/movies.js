@@ -11,7 +11,8 @@ export default Ember.Route.extend({
 
     return Ember.RSVP.hash({
       discover: discoverMovies,
-      upcoming: upcomingMovies
+      upcoming: upcomingMovies,
+      movieService: this.get('movies')
     });
   }
 });

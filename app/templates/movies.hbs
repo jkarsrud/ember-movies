@@ -7,6 +7,6 @@
 <h3>Upcoming movies</h3>
 <div class="row movie-list">
   {{#each model.upcoming as |movie|}}
-    {{movie-item movie=movie}}
+    {{movie-item movieService=movieService movie=movie}}
   {{/each}}
 </div>

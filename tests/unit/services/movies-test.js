@@ -30,8 +30,9 @@ test('buildQueryParams should return a string with api_key and options as query 
 
 test('buildURL should return a string with complete url and query parameters', function(assert) {
   var service = this.subject({
-    apiKey: 'test',
-    apiHost: 'http://test.com/'
+    apiKey: 'key',
+    apiHost: 'http://host.com',
+    apiNamespace: 'namespace'
   });
 
   var options = {
@@ -40,5 +41,5 @@ test('buildURL should return a string with complete url and query parameters', f
 
   var url = service.buildURL('test', options);
 
-  assert.equal('http://test.com/test?api_key=test&sort_by=popularity.desc', url);
+  assert.equal('http://host.com/namespace/test?api_key=key&sort_by=popularity.desc', url);
 });

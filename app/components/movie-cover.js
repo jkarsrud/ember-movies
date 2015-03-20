@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  movieService: Ember.inject.service('movies'),
   tagName: 'img',
   attributeBindings: ['imageUrl:src', 'alt'],
   classNameBindings: [':movie-cover', 'loaded'],
