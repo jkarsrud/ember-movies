@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  movies: Ember.inject.service(),
+  movieService: Ember.inject.service('movies'),
   model() {
     const discoverMovies = this.store.find('discover', {
       sort_by: 'popularity.desc'
@@ -11,8 +11,11 @@ export default Ember.Route.extend({
 
     return Ember.RSVP.hash({
       discover: discoverMovies,
-      upcoming: upcomingMovies,
-      movieService: this.get('movies')
+      upcoming: upcomingMovies
     });
+  },
+  setupController: function(controller, model) {
+    this._super(controller, model);
+    controller.set('movieService', this.get('movieService'));
   }
 });
