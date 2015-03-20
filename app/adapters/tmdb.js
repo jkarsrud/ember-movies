@@ -10,18 +10,18 @@ export default DS.RESTAdapter.extend({
   namespace: config.TMDB.api_namespace,
   apiKey: config.TMDB.api_key,
   find(store, type, id) {
-    const url = this.buildURLWithQueryParams(type.typeKey, id, true);
+    const url = this.buildURLWithQueryParams(type.typeKey, {}, id);
     return this.ajax(url, 'GET');
   },
   findAll(store, type) {
-    var url = this.buildURLWithQueryParams(type.typeKey, {}, false);
+    var url = this.buildURLWithQueryParams(type.typeKey, {});
     return this.ajax(url, 'GET');
   },
   findQuery(store, type, query) {
-    var url = this.buildURLWithQueryParams(type.typeKey, query, false);
+    var url = this.buildURLWithQueryParams(type.typeKey, query);
     return this.ajax(url, 'GET');
   },
-  buildURLWithQueryParams(type, query, queryIsId) {
+  buildURLWithQueryParams(type, query, id) {
     var url = [],
         host = get(this, 'host'),
         prefix = this.urlPrefix();
@@ -31,7 +31,7 @@ export default DS.RESTAdapter.extend({
     //We might get passed in an array of ids from findMany
     //in which case we don't want to modify the url, as the
     //ids will be passed in through a query param
-    if (queryIsId && query && !Ember.isArray(query)) { url.push(encodeURIComponent(query)); }
+    if (id && !Ember.isArray(id)) { url.push(encodeURIComponent(id)); }
 
     if (prefix) { url.unshift(prefix); }
 
