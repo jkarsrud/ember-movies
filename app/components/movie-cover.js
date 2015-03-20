@@ -4,10 +4,11 @@ export default Ember.Component.extend({
   movieService: Ember.inject.service('movies'),
   tagName: 'img',
   attributeBindings: ['imageUrl:src', 'alt'],
-  classNames: ['movie-cover'],
+  classNameBindings: [':movie-cover', 'loaded'],
+  loaded: false,
   waitForImageLoad: function() {
     this.$().on('load', () => {
-      this.$().addClass('loaded');
+      this.set('loaded', true);
     });
   }.on('didInsertElement'),
   alt: function() {
