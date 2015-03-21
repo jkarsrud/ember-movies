@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('upcoming', {
+moduleForModel('tv', {
   // Specify the other units that are required for this test.
   needs: []
 });

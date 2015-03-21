@@ -19,7 +19,7 @@ export default Ember.Component.extend({
     return 'background-image: url(%@)'.fmt(this.get('imageUrl'));
   }.property('imageUrl'),
   imageUrl: function() {
-    const movieService = this.get('movieService');
+    const movieService = this.get('tmdbService');
     const baseUrl = movieService.get('images.secure_base_url');
     const posterUrl = this.get('movie.backdrop_path');
 

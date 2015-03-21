@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-import mockMovieService from '../../mocks/services/movies';
+import mockTmdbService from '../../mocks/services/tmdb';
 
 moduleForComponent('movie-cover', {
   // specify the other units that are required for this test
@@ -15,7 +15,7 @@ test('it renders', function(assert) {
 
   // creates the component instance
   var component = this.subject({
-    movieService: mockMovieService
+    tmdbService: mockTmdbService
   });
   assert.equal(component._state, 'preRender');
 

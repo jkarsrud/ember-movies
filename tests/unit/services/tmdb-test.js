@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('service:movies', {
+moduleFor('service:tmdb', {
   // Specify the other units that are required for this test.
   // needs: ['service:foo']
 });

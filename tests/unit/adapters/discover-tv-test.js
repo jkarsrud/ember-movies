@@ -3,13 +3,13 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('serializer:upcoming', {
+moduleFor('adapter:discover-tv', 'DiscoverTvAdapter', {
   // Specify the other units that are required for this test.
   // needs: ['serializer:foo']
 });
 
 // Replace this with your real tests.
 test('it exists', function(assert) {
-  var serializer = this.subject();
-  assert.ok(serializer);
+  var adapter = this.subject();
+  assert.ok(adapter);
 });

@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     return this.get('movie.title');
   }.property('movie.title'),
   imageUrl: function() {
-    const movieService = this.get('movieService');
+    const movieService = this.get('tmdbService');
     const baseUrl = movieService.get('images.secure_base_url');
     const posterSizes = movieService.get('images.poster_sizes');
     const posterUrl = this.get('movie.poster_path');

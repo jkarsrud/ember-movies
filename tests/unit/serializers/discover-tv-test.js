@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('serializer:discover', {
+moduleFor('serializer:discover-tv', {
   // Specify the other units that are required for this test.
   // needs: ['serializer:foo']
 });

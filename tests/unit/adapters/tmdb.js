@@ -14,7 +14,7 @@ test('it exists', function(assert) {
   assert.ok(adapter);
 });
 
-test('buildURL should return a string with complete url and query parameters', function(assert) {
+test('buildURLWithQueryString should return a string with complete url and query parameters', function(assert) {
   var service = this.subject({
     apiKey: 'test',
     host: 'http://test.com/'

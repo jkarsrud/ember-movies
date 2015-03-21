@@ -1,0 +1,12 @@
+<h3>Popular movies</h3>
+<div class="row movie-list">
+{{#each model.movies as |movie|}}
+  {{movie-item tmdbService=tmdbService movie=movie}}
+{{/each}}
+</div>
+<h3>Popular TV shows</h3>
+<div class="row movie-list">
+  {{#each model.shows as |show|}}
+    {{movie-item tmdbService=tmdbService movie=show}}
+  {{/each}}
+</div>
