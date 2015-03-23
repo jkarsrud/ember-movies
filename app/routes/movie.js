@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  tmdbService: Ember.inject.service('tmdb'),
+  tmdb: Ember.inject.service(),
   model(params) {
     return this.store.findWithQuery('movie', params.movie_id, {
       append_to_response: 'images'

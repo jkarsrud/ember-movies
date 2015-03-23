@@ -1,0 +1,39 @@
+<div class="tv-show">
+  <div class="container movie-heading">
+    <div class="col-md-">
+      <h2>{{model.name}}</h2>
+    </div>
+  </div>
+  <div class="row-fluid info">
+    <div class="container">
+      <div class="col-sm-4 col-md-4">
+        <div class="cover-image-wrapper">
+          {{cover-image model=model size="large"}}
+        </div>
+      </div>
+      <div class="col-sm-8 col-md-8">
+        <p>{{model.overview}}</p>
+        <p>
+          {{#each model.genres as |genre|}}
+            <span class="badge badge-primary text-uppercase">{{genre.name}}</span>
+          {{/each}}
+        </p>
+        {{#link-to 'movie.trailer' movie.id classNames="btn btn-primary"}}Trailer{{/link-to}}
+        <div class="panel panel-default">
+          <div class="panel-heading">Interesting facts</div>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item">Release date: {{model.release_date}}</li>
+              <li class="list-group-item">Rating: {{model.vote_average}}</li>
+              <li class="list-group-item">Budget: $ {{model.budget}}</li>
+              <li class="list-group-item">Revenue: $ {{model.revenue}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="movie-backdrop-container">
+    {{backdrop-image model=model}}
+  </div>
+</div>

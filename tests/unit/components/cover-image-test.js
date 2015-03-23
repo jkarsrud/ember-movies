@@ -5,9 +5,9 @@ import {
 
 import mockTmdbService from '../../mocks/services/tmdb';
 
-moduleForComponent('movie-item', {
+moduleForComponent('cover-image', {
   // specify the other units that are required for this test
-  needs: ['component:cover-image']
+  //needs: ['service:movies']
 });
 
 test('it renders', function(assert) {
@@ -17,7 +17,6 @@ test('it renders', function(assert) {
   var component = this.subject({
     tmdbService: mockTmdbService
   });
-
   assert.equal(component._state, 'preRender');
 
   // renders the component to the page

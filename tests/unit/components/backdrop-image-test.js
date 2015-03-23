@@ -5,9 +5,8 @@ import {
 
 import mockTmdbService from '../../mocks/services/tmdb';
 
-moduleForComponent('movie-cover', {
+moduleForComponent('backdrop-image', {
   // specify the other units that are required for this test
-  //needs: ['service:movies']
 });
 
 test('it renders', function(assert) {

@@ -1,24 +1,33 @@
-<div class="movie">
-  <h2>{{model.title}}</h2>
-  <div class="row movie-info">
-    <div class="col-sm-4 col-md-4">
-      <div class="movie-cover-wrapper">
-        {{movie-cover movieService=movieService movie=model size="large"}}
+<div class="movie container">
+  <div class="row info">
+    <div class="col-sm-4 col-md-4 col-lg-2">
+      <div class="cover-image-wrapper">
+        {{cover-image model=model size="large"}}
       </div>
     </div>
-    <div class="col-sm-8 col-md-8">
-      <h4>{{model.tagline}}</h4>
+    <div class="col-sm-8 col-md-8 col-lg-10">
+      <h2>{{model.title}}</h2>
+      <h3>{{releaseYear}}</h3>
+      <div class="genres">
+        {{#each model.genres as |genre|}}
+          <span class="label label-default">{{genre.name}}</span>
+        {{/each}}
+      </div>
+      <h4>Overview</h4>
       <p>{{model.overview}}</p>
+      <div class="actions">
+        {{#link-to 'movie.trailer' movie.id classNames="btn btn-primary" }}View trailer{{/link-to}}
+      </div>
       <h5>Interesting facts</h5>
-      <ul class="list-group">
-        <li class="list-group-item">Release date: {{model.release_date}}</li>
-        <li class="list-group-item">Rating: {{model.vote_average}}</li>
-        <li class="list-group-item">Budget: $ {{model.budget}}</li>
-        <li class="list-group-item">Revenue: $ {{model.revenue}}</li>
+      <ul>
+        <li>Release date: {{model.release_date}}</li>
+        <li>Rating: {{model.vote_average}}</li>
+        <li>Budget: {{format-money amount=model.budget}}</li>
+        <li>Revenue: {{format-money amount=model.revenue}}</li>
       </ul>
     </div>
   </div>
-  <div class="movie-backdrop-container">
-    {{movie-backdrop tmdbService=tmdbService movie=model}}
+  <div class="backdrop-container">
+    {{backdrop-image model=model}}
   </div>
 </div>

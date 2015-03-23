@@ -5,7 +5,7 @@ import {
 
 import mockTmdbService from '../../mocks/services/tmdb';
 
-moduleForComponent('movie-item', {
+moduleForComponent('tv-item', {
   // specify the other units that are required for this test
   needs: ['component:cover-image']
 });

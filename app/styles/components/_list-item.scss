@@ -1,0 +1,33 @@
+.list-item {
+  text-align: center;
+  padding: 0;
+  border-radius: 1px;
+  transition: box-shadow .2s;
+  &:hover {
+    a:before {
+      box-shadow: inset 0 0 0 2px $brand-primary;
+    }
+  }
+  a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: box-shadow .2s;
+    box-shadow: inset 0 0 0 2px transparent;
+    z-index: 100;
+  }
+  img {
+    width: 100%;
+  }
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    a {
+      color: $headings-color;
+    }
+  }
+}

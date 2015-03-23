@@ -1,5 +1,5 @@
 /* global require, module */
-
+var path = require('path');
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
@@ -18,5 +18,10 @@ var app = new EmberApp({
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+
+app.import(path.join(app.bowerDirectory, 'accounting.js', 'accounting.js'));
+
+// Import AMD module shims
+app.import(path.join('vendor', 'app-shims.js'));
 
 module.exports = app.toTree();

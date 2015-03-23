@@ -1,6 +1,3 @@
-{{#link-to 'movie' movie.id classNames="movie-cover-wrapper"}}
-  {{movie-cover tmdbService=tmdbService movie=movie size="medium"}}
+{{#link-to 'movie' model.id classNames="cover-image-wrapper"}}
+  {{cover-image model=model size="medium"}}
 {{/link-to}}
-<div class="caption">
-  <h6 class="title">{{#link-to 'movie' movie.id}}{{movie.title}}{{/link-to}}</h6>
-</div>

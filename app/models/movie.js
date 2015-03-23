@@ -28,5 +28,6 @@ export default DS.Model.extend({
   title: attr(),
   video: attr(),
   vote_average: attr(),
-  vote_count: attr()
+  vote_count: attr(),
+  videos: DS.hasMany('video')
 });
