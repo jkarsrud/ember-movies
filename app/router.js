@@ -7,12 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('home', {path: '/'});
-  this.resource('movies', { path: '/movie' });
-  this.resource('movie', {path: '/movie/:movie_id' }, function() {
-    this.route('trailer');
+  this.resource('movie', {path: '/movies/:movie_id' }, function() {
+    this.route('trailer', {path: '/trailer'});
   });
-  this.resource('tv-shows', { path: '/tv' });
-  this.resource('tv', { path: '/tv/:tv_id' });
 });
 
 export default Router;

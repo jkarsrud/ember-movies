@@ -1,29 +1,29 @@
 <div class="movie container">
+  <h1>{{model.title}}</h1>
+  <h4>{{model.tagline}}</h4>
   <div class="row info">
-    <div class="col-sm-4 col-md-4 col-lg-2">
+    <div class="col-sm-4 col-md-4 col-lg-4">
       <div class="cover-image-wrapper">
         {{cover-image model=model size="large"}}
       </div>
-    </div>
-    <div class="col-sm-8 col-md-8 col-lg-10">
-      <h2>{{model.title}}</h2>
-      <h3>{{releaseYear}}</h3>
-      <div class="genres">
-        {{#each model.genres as |genre|}}
-          <span class="label label-default">{{genre.name}}</span>
-        {{/each}}
-      </div>
-      <h4>Overview</h4>
-      <p>{{model.overview}}</p>
       <div class="actions">
-        {{#link-to 'movie.trailer' movie.id classNames="btn btn-primary" }}View trailer{{/link-to}}
+        {{#link-to 'movie.trailer' model.id classNames="btn btn-primary trailer-button" }}View trailer{{/link-to}}
       </div>
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-8">
+      <header class="header">
+        <h4>{{releaseYear}} {{formattedGenres}}</h4>
+      </header>
+      <p>{{{model.overview}}}</p>
       <h5>Interesting facts</h5>
-      <ul>
-        <li>Release date: {{model.release_date}}</li>
-        <li>Rating: {{model.vote_average}}</li>
-        <li>Budget: {{format-money amount=model.budget}}</li>
-        <li>Revenue: {{format-money amount=model.revenue}}</li>
+      <ul class="list-group">
+        {{#if model.homepage}}
+        <li class="list-group-item">Website: <a {{bind-attr href=model.homepage}}>{{model.homepage}}</a></li>
+        {{/if}}
+        <li class="list-group-item">Release date: {{model.release_date}}</li>
+        <li class="list-group-item">Rating: {{model.vote_average}}</li>
+        <li class="list-group-item">Budget: {{format-money amount=model.budget}}</li>
+        <li class="list-group-item">Revenue: {{format-money amount=model.revenue}}</li>
       </ul>
     </div>
   </div>
@@ -31,3 +31,4 @@
     {{backdrop-image model=model}}
   </div>
 </div>
+{{outlet}}

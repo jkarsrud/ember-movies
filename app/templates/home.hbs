@@ -1,16 +1,8 @@
-<div class="container-fluid">
-<div class="row-fluid">
-  <h3>Popular movies</h3>
-  {{#each model.movies as |movie|}}
-    {{movie-item model=movie}}
-  {{/each}}
-</div>
-</div>
-<div class="container-fluid">
-<div class="row-fluid">
-  <h3>Popular TV shows</h3>
-  {{#each model.shows as |show|}}
-    {{tv-item model=show}}
-  {{/each}}
-</div>
+<div class="container">
+  <div class="row">
+    <h3>Popular movies</h3>
+    {{#each model.movies as |movie|}}
+      {{list-item model=movie}}
+    {{/each}}
+  </div>
 </div>

@@ -2,6 +2,6 @@ import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
   pathForType: function() {
-    return 'discover/movie';
+    return 'movie/popular';
   }
 });

@@ -1,33 +1,63 @@
 .list-item {
   text-align: center;
-  padding: 0;
+  padding: 0 5px;
   border-radius: 1px;
-  transition: box-shadow .2s;
+  position: relative;
+  margin-bottom: 10px;
+  transform: translate3d(0,0,0);
+
+  > a:before {
+    content: '';
+    display: block;
+    transition: box-shadow .2s;
+    box-shadow: inset 0 0 0 2px transparent;
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+  }
+
   &:hover {
-    a:before {
+    > a:before {
       box-shadow: inset 0 0 0 2px $brand-primary;
     }
+    .caption {
+      opacity: 1;
+      .details-button {
+        margin-top: 70%;
+      }
+    }
   }
-  a:before {
-    content: '';
+
+  img {
+    width: 100%;
+  }
+
+  .caption {
+    transition: all .2s;
     position: absolute;
+    opacity: 0;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    transition: box-shadow .2s;
-    box-shadow: inset 0 0 0 2px transparent;
-    z-index: 100;
+    background: rgba(0,0,0,.5);
+    z-index:99;
+    padding: 20px;
+
+    .details-button {
+      transition: all .2s ease;
+      margin-top: 80%;
+    }
   }
-  img {
-    width: 100%;
-  }
+
   .title {
+    color: $headings-color;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    a {
-      color: $headings-color;
-    }
+    font-weight: 700;
   }
 }

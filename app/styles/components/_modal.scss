@@ -1,0 +1,12 @@
+.modal {
+  display: block;
+  background: rgba(0,0,0,.85);
+
+  &.in .modal-dialog {
+    transform: translate(0, 10%);
+  }
+
+  &.trailer .modal-body {
+    padding: 0;
+  }
+}

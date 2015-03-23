@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed">
@@ -14,11 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        {{#link-to 'movies' tagName="li"}}
-          {{#link-to 'movies'}}Movies{{/link-to}}
-        {{/link-to}}
-        {{#link-to 'tv-shows' tagName="li"}}
-          {{#link-to 'tv-shows'}}TV Shows{{/link-to}}
+        {{#link-to 'home' tagName="li"}}
+          {{#link-to 'home'}}Home{{/link-to}}
         {{/link-to}}
       </ul>
     </div><!-- /.navbar-collapse -->
