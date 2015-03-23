@@ -7,5 +7,8 @@ export default Ember.Controller.extend({
   }.property('model.release_date'),
   formattedGenres: function() {
     return this.get('genreNames').join(' / ');
-  }.property('genreNames')
+  }.property('genreNames'),
+  slicedSimilar: function() {
+    return this.get('model.similar').slice(0, 6);
+  }.property('model.similar')
 });

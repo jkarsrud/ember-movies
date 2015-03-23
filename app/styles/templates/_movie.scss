@@ -1,5 +1,5 @@
 .movie, .tv {
-  .info {
+  .info, .similar {
     background: rgba(0,0,0,.3);
     padding: 15px 0;
     margin: 0 -15px;
@@ -19,6 +19,6 @@
   transition: all .2s;
 }
 
-.header {
+.header, section {
   margin-bottom: 20px;
 }

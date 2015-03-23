@@ -8,6 +8,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 98;
   &.loaded {
     opacity: 1;
   }
@@ -19,4 +20,10 @@
   position: relative;
   display: block;
   background: $gray-dark;
+  .glyphicon {
+    color: $gray-darker;
+    text-shadow: 0 1px 0 rgba(255,255,255,.2);
+    font-size: 70px;
+    margin-top: 50%;
+  }
 }

@@ -5,6 +5,8 @@ export default Ember.Component.extend({
   classNameBindings: [':backdrop-image', 'loaded'],
   loaded: false,
   waitForImageLoad: function() {
+    this.set('loaded', false);
+
     const img = Ember.$('<img />', {
       src: this.get('imageUrl'),
       style: 'display: none;'
@@ -14,7 +16,10 @@ export default Ember.Component.extend({
       this.$().remove('img');
       this.set('loaded', true);
     });
-  }.on('didInsertElement'),
+  }.on('didInsertElement').observes('model.backdrop_path'),
+  removeImageLoaded: function() {
+    this.set('loaded', false);
+  }.on('willDestroyElement'),
   style: function() {
     return 'background-image: url(%@)'.fmt(this.get('imageUrl'));
   }.property('imageUrl'),
@@ -26,5 +31,5 @@ export default Ember.Component.extend({
     let url = [baseUrl, 'original', posterUrl].join('');
 
     return url;
-  }.property('model'),
+  }.property('model.backdrop_path'),
 });

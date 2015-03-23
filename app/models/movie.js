@@ -32,5 +32,6 @@ export default DS.Model.extend({
   videos: attr(),
   hasVideos: function() {
     return this.get('videos').length;
-  }.property('videos')
+  }.property('videos'),
+  similar: attr()
 });

@@ -10,6 +10,9 @@ export default Ember.Component.extend({
       this.set('loaded', true);
     });
   }.on('didInsertElement'),
+  removeImageLoaded: function() {
+    this.set('loaded', false);
+  }.on('willDestroyElement').observes('model.poster_path'),
   alt: function() {
     return this.get('movie.title');
   }.property('model.title'),
@@ -37,5 +40,5 @@ export default Ember.Component.extend({
     let url = [baseUrl, posterSizes[posterIndex], posterUrl].join('');
 
     return url;
-  }.property('model', 'size'),
+  }.property('model.poster_path', 'size'),
 });

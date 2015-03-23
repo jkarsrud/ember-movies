@@ -14,19 +14,33 @@
       <header class="header">
         <h4>{{releaseYear}} {{formattedGenres}}</h4>
       </header>
-      <p>{{{model.overview}}}</p>
-      <h5>Interesting facts</h5>
-      <ul class="list-group">
-        {{#if model.homepage}}
-        <li class="list-group-item">Website: <a {{bind-attr href=model.homepage}}>{{model.homepage}}</a></li>
-        {{/if}}
-        <li class="list-group-item">Release date: {{model.release_date}}</li>
-        <li class="list-group-item">Rating: {{model.vote_average}}</li>
-        <li class="list-group-item">Budget: {{format-money amount=model.budget}}</li>
-        <li class="list-group-item">Revenue: {{format-money amount=model.revenue}}</li>
-      </ul>
+      <section>
+        <p>{{{model.overview}}}</p>
+      </section>
+      <section>
+        <h5>Not-so-interesting info</h5>
+        <ul class="list-group">
+          {{#if model.homepage}}
+          <li class="list-group-item">Website: <a {{bind-attr href=model.homepage}}>{{model.homepage}}</a></li>
+          {{/if}}
+          <li class="list-group-item">Release date: {{model.release_date}}</li>
+          <li class="list-group-item">Rating: {{model.vote_average}}</li>
+          <li class="list-group-item">Budget: {{format-money amount=model.budget}}</li>
+          <li class="list-group-item">Revenue: {{format-money amount=model.revenue}}</li>
+        </ul>
+      </section>
     </div>
   </div>
+  {{#if model.similar}}
+  <div class="row similar">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h4>Similar movies</h4>
+      {{#each slicedSimilar as |movie|}}
+        {{list-item model=movie}}
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
   <div class="backdrop-container">
     {{backdrop-image model=model}}
   </div>

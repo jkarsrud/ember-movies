@@ -7,6 +7,6 @@ export default Ember.Component.extend({
   type: 'text/html',
   attributeBindings: ['trailerUrl:src', 'frameborder', 'type'],
   trailerUrl: function() {
-    return 'http://youtube.com/embed/%@1?autoplay=1&fs=1&showinfo=0'.fmt(this.get('model.key'), 'autoplay=true', 'fs=1');
+    return 'http://youtube.com/embed/%@1?autoplay=1&fs=1&showinfo=0'.fmt(this.get('model.key'));
   }.property('model.key'),
 });
