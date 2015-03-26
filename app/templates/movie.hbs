@@ -17,7 +17,7 @@
       <section>
         <p>{{{model.overview}}}</p>
       </section>
-      <section>
+      <section class="col-sm-6 col-md-6 col-lg-6">
         <h5>Not-so-interesting info</h5>
         <ul class="list-group">
           {{#if model.homepage}}
@@ -29,18 +29,22 @@
           <li class="list-group-item">Revenue: {{format-money amount=model.revenue}}</li>
         </ul>
       </section>
+      <section class="col-sm-6 col-md-6 col-lg-6 cast">
+        <h5>Cast</h5>
+        {{#each topCast as |person|}}
+          {{list-cast model=person}}
+        {{/each}}
+      </section>
     </div>
+    {{#if model.similar}}
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h4>Similar movies</h4>
+        {{#each slicedSimilar as |movie|}}
+          {{list-item model=movie}}
+        {{/each}}
+      </div>
+    {{/if}}
   </div>
-  {{#if model.similar}}
-  <div class="row similar">
-    <div class="col-sm-12 col-md-12 col-lg-12">
-      <h4>Similar movies</h4>
-      {{#each slicedSimilar as |movie|}}
-        {{list-item model=movie}}
-      {{/each}}
-    </div>
-  </div>
-  {{/if}}
   <div class="backdrop-container">
     {{backdrop-image model=model}}
   </div>

@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   movie: null,
   beforeModel(transition) {
     const parentModel = this.modelFor('movie');
-    if(parentModel.get('hasVideos')) {
+    if(parentModel.get('videos').length) {
       this.set('movie', parentModel);
     } else {
       transition.abort();

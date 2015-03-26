@@ -30,8 +30,6 @@ export default DS.Model.extend({
   vote_average: attr(),
   vote_count: attr(),
   videos: attr(),
-  hasVideos: function() {
-    return this.get('videos').length;
-  }.property('videos'),
-  similar: attr()
+  similar: attr(),
+  cast: attr()
 });

@@ -1,0 +1,29 @@
+@mixin table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.list-cast {
+  padding: 5px 0;
+  overflow: hidden;
+  border-bottom: 1px solid $gray;
+}
+
+.list-cast-thumbnail-wrapper {
+  @include table-cell;
+}
+
+.list-cast-thumbnail {
+  width: 45px;
+  height: 45px;
+  border-radius: 100px;
+  overflow:hidden;
+}
+
+.list-cast-info {
+  @include table-cell;
+  padding-left: 10px;
+  p {
+    margin-bottom: 0;
+  }
+}
