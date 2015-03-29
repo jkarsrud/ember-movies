@@ -1,0 +1,21 @@
+<div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    {{#link-to 'home' classNames="navbar-brand"}}Ember Movies{{/link-to}}
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      {{#link-to 'home' tagName="li"}}
+        {{#link-to 'home'}}Home{{/link-to}}
+      {{/link-to}}
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container -->
