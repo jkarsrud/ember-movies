@@ -1,3 +1,4 @@
+@import 'bourbon';
 @import 'bower_components/bootswatch/cyborg/variables';
 
 h1, h2, h3, h4, h5, h6 {
@@ -5,6 +6,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Component imports
+@import 'components/loading-spinner';
 @import 'components/cover-image';
 @import 'components/list-item';
 @import 'components/backdrop-image';

@@ -25,6 +25,7 @@
     "ember-cli-app-version": "0.3.2",
     "ember-cli-babel": "^4.0.0",
     "ember-cli-bootswatch": "0.1.4",
+    "ember-cli-bourbon": "1.0.0",
     "ember-cli-content-security-policy": "0.3.0",
     "ember-cli-dependency-checker": "0.0.8",
     "ember-cli-divshot": "0.1.7",

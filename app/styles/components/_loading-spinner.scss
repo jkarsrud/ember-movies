@@ -1,0 +1,132 @@
+$loaderHeight: 72px;
+$innerHeight: $loaderHeight / 6;
+$spinTime: 3s;
+$colBase: $brand-primary;
+$colBg: transparent;
+
+.box {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: $colBg;
+
+  left: 50%;
+  margin-left: -40px;
+  top: 50%;
+  margin-top: -40px;
+}
+
+.loading {
+  &:before{
+    content: '';
+    position: absolute;
+    width: $loaderHeight;
+    height: $loaderHeight;
+
+    top: 50%;
+    margin-top: -$loaderHeight / 2;
+
+    left: 50%;
+    margin-left: -$loaderHeight / 2;
+
+    border-radius: 50%;
+    border-width: 2px 1px;
+    border-style: solid;
+    border-color: $colBase fade-out($colBase, 0.7);
+
+    @include animation(spin $spinTime infinite);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: $innerHeight;
+    height: $innerHeight;
+
+    top: 50%;
+    margin-top: -$innerHeight / 2;
+
+    left: 50%;
+    margin-left: -$innerHeight / 2;
+
+    border-radius: 50%;
+
+    background-color: $colBase;
+
+    @include animation(pulse $spinTime * 2 infinite, borderPulse $spinTime * 2 infinite);
+  }
+}
+
+@include keyframes(spin) {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+
+@include keyframes(pulse) {
+  $colOn: fade-out(lighten($colBase, 30%), 0.1);
+  $colOff: fade-out($colBase, 0.8);
+
+  0% {
+    background-color: $colOff;
+  }
+
+  13% {
+    background-color: $colOff;
+  }
+
+  15% {
+    background-color: $colOn;
+  }
+
+  28% {
+    background-color: $colOn;
+  }
+
+  30% {
+    background-color: $colOff;
+  }
+
+  43% {
+    background-color: $colOff;
+  }
+
+  45% {
+    background-color: $colOn;
+  }
+
+  70% {
+    background-color: $colOn;
+  }
+
+  74% {
+    background-color: $colOff;
+  }
+
+  100% {
+    background-color: $colOn;
+  }
+}
+
+@include keyframes(borderPulse) {
+  $colBorder: fade-out($colBase, 0.2);
+  0% {
+    box-shadow: 0 0 0 0 $colBg, 0 0 0 $innerHeight / 6 $colBorder;
+  }
+
+  40% {
+    box-shadow: 0 0 0 $innerHeight / 6 $colBg, 0 0 0 $innerHeight / 3 $colBorder;
+  }
+
+  80% {
+    box-shadow: 0 0 0 $innerHeight/ 2 $colBg, 0 0 1px $innerHeight / 2 $colBorder;
+  }
+}
