@@ -2,7 +2,7 @@
   <h1>{{model.title}}</h1>
   <h4>{{model.tagline}}</h4>
   <div class="row info">
-    <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
       <div class="cover-image-wrapper">
         {{cover-image model=model size="large"}}
       </div>
@@ -10,7 +10,7 @@
         {{#link-to 'movie.trailer' model.id classNames="btn btn-primary trailer-button" }}View trailer{{/link-to}}
       </div>
     </div>
-    <div class="col-sm-8 col-md-8 col-lg-8">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
       <header class="header">
         <h4>{{releaseYear}} {{formattedGenres}}</h4>
       </header>
@@ -37,7 +37,7 @@
       </section>
     </div>
     {{#if model.similar}}
-      <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h4>Similar movies</h4>
         {{#each slicedSimilar as |movie|}}
           {{list-item model=movie}}

@@ -36,28 +36,37 @@
   }
 
   .caption {
-    transition: all .2s;
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0,0,0,.5);
-    z-index:99;
-    padding: 20px;
-
-    .details-button {
-      transition: all .2s ease;
-      margin-top: 80%;
+    .title {
+      font-size: 14px;
+      font-weight: 500;
+      color: $headings-color;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
-  }
 
-  .title {
-    color: $headings-color;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: 700;
+    @include media($screen-sm) {
+
+      transition: all .2s;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,.5);
+      z-index:99;
+      padding: 20px;
+
+      .title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .details-button {
+        transition: all .2s ease;
+        margin-top: 80%;
+      }
+    }
   }
 }
