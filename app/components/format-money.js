@@ -4,7 +4,7 @@ import accounting from 'accounting';
 
 export default Ember.Component.extend({
   layout: layout,
-  tagName: '',
+  tagName: 'span',
   formatted: function() {
     return accounting.formatMoney(this.get('amount'), Ember.$.extend(accounting.settings.currency, {
       symbol: this.get('symbol'),
