@@ -21,7 +21,7 @@ export default Ember.Component.extend({
     this.set('loaded', false);
   }.on('willDestroyElement'),
   style: function() {
-    return 'background-image: url(%@)'.fmt(this.get('imageUrl'));
+    return ('background-image: url(%@)'.fmt(this.get('imageUrl'))).htmlSafe();
   }.property('imageUrl'),
   imageUrl: function() {
     const movieService = this.get('tmdbService');
