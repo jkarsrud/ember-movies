@@ -17,19 +17,28 @@
       <section>
         <p>{{{model.overview}}}</p>
       </section>
-      <section class="col-sm-6 col-md-6 col-lg-6">
+      <section class="col-sm-12 col-md-12 col-lg-6">
         <h5>Not-so-interesting info</h5>
-        <ul class="list-group">
+        <dl class="dl-horizontal">
           {{#if model.homepage}}
-          <li class="list-group-item">Website: <a {{bind-attr href=model.homepage}}>{{model.homepage}}</a></li>
+            <dt>Website:</dt>
+            <dd><a {{bind-attr href=model.homepage}}>{{model.homepage}}</a></dd>
           {{/if}}
-          <li class="list-group-item">Release date: {{model.release_date}}</li>
-          <li class="list-group-item">Rating: {{model.vote_average}}</li>
-          <li class="list-group-item">Budget: {{format-money amount=model.budget}}</li>
-          <li class="list-group-item">Revenue: {{format-money amount=model.revenue}}</li>
-        </ul>
+          {{#if director}}
+            <dt>Directed by:</dt>
+            <dd>{{#link-to 'person' director.id}}{{director.name}}{{/link-to}}</dd>
+          {{/if}}
+          <dt>Release date:</dt>
+          <dd>{{model.release_date}}</dd>
+          <dt>Rating:</dt>
+          <dd>{{model.vote_average}}</dd>
+          <dt>Budget:</dt>
+          <dd>{{format-money amount=model.budget}}</dd>
+          <dt>Revenue:</dt>
+          <dd>{{format-money amount=model.revenue}}</dd>
+        </dl>
       </section>
-      <section class="col-sm-6 col-md-6 col-lg-6 cast">
+      <section class="col-sm-12 col-md-12 col-lg-6 cast">
         <h5>Cast</h5>
         {{#each topCast as |person|}}
           {{list-cast model=person}}

@@ -4,6 +4,8 @@
 {{/link-to}}
 <div class="caption">
   <h4 class="title">{{model.title}}</h4>
+  {{#if model.vote_average}}
   <h5 class="title hidden-xs">{{model.vote_average}} / 10</h5>
+  {{/if}}
   {{#link-to 'movie' model.id classNames="btn btn-primary hidden-xs details-button"}}Details{{/link-to}}
 </div>

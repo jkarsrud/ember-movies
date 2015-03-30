@@ -1,0 +1,32 @@
+<div class="movie container">
+  <h1>{{model.name}}</h1>
+  <div class="row info">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <div class="cover-image-wrapper">
+        {{profile-image model=model}}
+      </div>
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+      <p>{{model.biography}}</p>
+      <section class="col-sm-6 col-md-6 col-lg-6">
+        <h5>Not-so-interesting info</h5>
+        <ul class="list-group">
+          <li class="list-group-item">Place of birth: {{model.place_of_birth}}</li>
+          <li class="list-group-item">Born: {{model.birthday}}</li>
+          {{#if model.deathday}}
+            <li class="list-group-item">Died: {{model.deathday}}</li>
+          {{/if}}
+        </ul>
+      </section>
+    </div>
+    {{#if model.movie_credits}}
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h4>Played in</h4>
+        {{#each model.movie_credits.cast as |movie|}}
+          {{list-item model=movie}}
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</div>
+{{outlet}}

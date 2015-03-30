@@ -1,8 +1,10 @@
 <div class="list-cast-thumbnail-wrapper">
   <div class="list-cast-thumbnail">
+    {{#if model.profile_path}}
     <img {{bind-attr src=imageUrl alt=model.name}}>
+    {{/if}}
   </div>
 </div>
 <div class="list-cast-info">
-  <p>{{model.name}} <span class="text-muted">as</span> {{model.character}}</p>
+  <p>{{#link-to 'person' model.id}}{{model.name}}{{/link-to}} <span class="text-muted">as</span> {{model.character}}</p>
 </div>

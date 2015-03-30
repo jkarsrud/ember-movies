@@ -13,5 +13,8 @@ export default Ember.Controller.extend({
   }.property('model.similar'),
   topCast: function() {
     return this.get('model.cast').slice(0,5);
-  }.property('model.cast')
+  }.property('model.cast'),
+  director: Ember.computed('model.crew', function() {
+    return this.get('model.crew').findBy('job', 'Director');
+  })
 });

@@ -31,5 +31,6 @@ export default DS.Model.extend({
   vote_count: attr(),
   videos: attr(),
   similar: attr(),
-  cast: attr()
+  cast: attr(),
+  crew: attr()
 });

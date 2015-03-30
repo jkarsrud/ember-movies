@@ -5,6 +5,7 @@ export default DS.RESTSerializer.extend({
     payload.videos = payload.videos.results;
     payload.similar = payload.similar.results;
     payload.cast = payload.credits.cast;
+    payload.crew = payload.credits.crew;
 
     delete payload.credits;
 
